@@ -16,6 +16,7 @@
 pip install mxnet-cu90
 pip install matplotlib
 pip install numpy 
+pip install scikit-image
 pip install awscli --upgrade --ignore-installed six
 
 aws s3 sync s3://japan-roof-top-bucket /storage --no-sign-request
