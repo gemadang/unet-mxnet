@@ -144,9 +144,9 @@ def train_model(model, train_loader, test_loader, num_epochs=10, batch_size=32, 
                 loss.backward()
             trainer.step(images.shape[0])
 
-#        if (epoch) % save_interval == 0:
-#            print ('Epoch [{}/{}], Loss: {}'
-#                   .format(epoch, num_epochs, loss.mean()))
+        if (epoch) % save_interval == 0:
+            print ('Epoch [{}/{}], Loss: {}'
+                   .format(epoch, num_epochs, loss.mean()))
             #test_model(model, test_loader, epoch)
             #save_model(model, epoch)
 
