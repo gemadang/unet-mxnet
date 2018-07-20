@@ -1,0 +1,8 @@
+{
+  "project": "unet_mxnet",
+  "machineType": "P100",
+  "container": "Test-Container",
+  "command": "bash run.sh",
+  "workspace": "https://github.com/Paperspace/gradient-ssh-test.git",
+  "lastJobId": "jsg5q7jegziubh"
+}
