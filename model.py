@@ -112,12 +112,12 @@ def test_model(model, test_loader, epoch):
             filled_in = visualize(np.argmax(outputs[i], axis=0))
             axs[2, i].imshow(filled_in)
             axs[2, i].axis('off')
-        fig.savefig('./imgs_results/testing_epoch_%s.png' % (epoch))
+        fig.savefig('/artifacts/testing_epoch_%s.png' % (epoch))
         plt.close()
         break
 
 def save_model(model, epoch):
-    model.save('model_', epoch)
+    model.save('/artifacts/model_', epoch)
 
 def train_model(model, train_loader, test_loader, num_epochs=10, batch_size=32, save_interval=100):
 
@@ -174,13 +174,13 @@ def visualize(temp):
 
 def load_data(is_testing=False, batch_size=32, shuffle=True, drop_last=True):
     data_type = "Train"
-    batch_images = glob('./%s_data/*' % (data_type))
+    batch_images = glob('/storage/%s_data/*' % (data_type))
 
     images, labels = [], []
     for img_path in batch_images:
         img_name = img_path.split('/')[-1]
         img = io.imread(img_path)
-        label = io.imread('./%s_label/%s' % (data_type, img_name))
+        label = io.imread('/storage/%s_label/%s' % (data_type, img_name))
 
         if not is_testing:
             transform = np.random.randint(0, 1)
